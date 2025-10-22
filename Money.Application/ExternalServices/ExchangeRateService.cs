@@ -32,7 +32,7 @@ namespace Money.Application.ExternalServices
                 }
                 catch 
                 {
-                     throw new ArgumentException($"External API error {fromCurrency} to {toCurrency}");
+                     throw new ArgumentException($"OpenExchangeRatesApi error {fromCurrency} to {toCurrency}");
                 }
 
                 if (response == null || response.Rates == null || response.Rates.Count == 0)
