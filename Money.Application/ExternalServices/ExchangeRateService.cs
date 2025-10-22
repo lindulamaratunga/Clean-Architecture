@@ -1,5 +1,5 @@
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Money.Application.ExternalApi;
 using Money.Application.ExternalDTO;
 
@@ -45,7 +45,7 @@ namespace Money.Application.ExternalServices
                     return -1;
                 }
 
-                _logger.LogInformation("Exchange rate calculated: {FromCurrency} to {ToCurrency} = {Rate}", 
+                _logger.LogInformation("Exchange rate calculated: {FromCurrency} to {ToCurrency} = {Rate}",
                         fromCurrency, toCurrency, response.Rates.First().Value);
 
                 return response.Rates.First().Value;

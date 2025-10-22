@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Money.Infrastructure.Data;
 using Money.Domain.Models;
 using Money.Domain.Repositories;
+using Money.Infrastructure.Data;
 
 namespace Money.Infrastructure.Repositories
 {

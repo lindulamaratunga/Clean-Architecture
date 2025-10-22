@@ -28,7 +28,7 @@ namespace Money.Application.Factories
         {
             try
             {
-                _logger.LogInformation("Starting currency conversion: {Amount} {FromCurrency} to {ToCurrency}", 
+                _logger.LogInformation("Starting currency conversion: {Amount} {FromCurrency} to {ToCurrency}",
                     amount, fromCurrency, toCurrency);
 
                 if (fromCurrency == null)
@@ -72,14 +72,14 @@ namespace Money.Application.Factories
                 // Save conversion to database
                 var savedConversion = await _conversionRepository.AddAsync(conversion);
 
-                _logger.LogInformation("Currency conversion completed successfully. Id: {Id}", 
+                _logger.LogInformation("Currency conversion completed successfully. Id: {Id}",
                     savedConversion.Id);
 
                 return savedConversion;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error during currency conversion: {Amount} {FromCurrency} to {ToCurrency}", 
+                _logger.LogError(ex, "Error during currency conversion: {Amount} {FromCurrency} to {ToCurrency}",
                     amount, fromCurrency, toCurrency);
                 throw;
             }

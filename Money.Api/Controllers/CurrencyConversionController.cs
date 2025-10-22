@@ -157,7 +157,7 @@ public class CurrencyConversionController : ControllerBase
     [HttpGet("get-All")]
     [ProducesResponseType(typeof(CurrencyConversionResponseDTO), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<CurrencyConversionResponseDTO>>GetAll()
+    public async Task<ActionResult<CurrencyConversionResponseDTO>> GetAll()
     {
         try
         {

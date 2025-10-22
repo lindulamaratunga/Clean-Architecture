@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using Refit;
-using Serilog;
-using Money.Infrastructure.Data;
 using Money.Api;
 using Money.Application.ExternalApi;
+using Money.Infrastructure.Data;
+using Refit;
+using Serilog;
 
 // Create the WebApplication builder, which sets up the host and configuration
 var builder = WebApplication.CreateBuilder(args);
@@ -47,12 +47,13 @@ builder.Services.AddEndpointsApiExplorer();
 // Configure Swagger with XML comments
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { 
-        Title = "Lindul Amaratunga - Money API", 
+    c.SwaggerDoc("v1", new()
+    {
+        Title = "Lindul Amaratunga - Money API",
         Version = "v1",
         Description = "Currency conversion"
     });
-    
+
     // Include XML comments
     var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);

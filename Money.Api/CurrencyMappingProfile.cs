@@ -1,6 +1,6 @@
 using AutoMapper;
-using Money.Domain.Models;
 using Money.Application.ServiceDTO;
+using Money.Domain.Models;
 
 namespace Money.Api
 {

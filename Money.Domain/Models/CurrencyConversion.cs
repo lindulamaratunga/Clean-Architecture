@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace Money.Domain.Models
 {
     public class CurrencyConversion

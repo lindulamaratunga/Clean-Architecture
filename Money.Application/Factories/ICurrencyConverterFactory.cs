@@ -1,5 +1,4 @@
 using Money.Domain.Models;
-using Money.Application.ServiceDTO;
 
 namespace Money.Application.Factories
 {
