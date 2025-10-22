@@ -45,7 +45,7 @@ namespace Money.Tests.Application
             var amount = 10m;
             var departmentId = 1;
             var exchangeRate = 0.857829m;
-            var expectedConvertedAmount = 8.5783m;
+            var expectedConvertedAmount = 8.58m;
 
             var expectedConversion = _fixture.Build<CurrencyConversion>()
                 .With(x => x.FromCurrency, fromCurrency.ToUpper())

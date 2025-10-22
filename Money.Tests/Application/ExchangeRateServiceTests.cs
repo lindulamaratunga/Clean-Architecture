@@ -16,13 +16,13 @@ namespace Money.Tests.Application
         private Mock<ILogger<ExchangeRateService>> _mockLogger;
         private Mock<IConfiguration> _mockConfiguration;
         private ExchangeRateService _service;
-        private IFixture _fixture;
+        //private IFixture _fixture;
         private const string TestApiKey = "test-api-key";
 
         [TestInitialize]
         public void Setup()
         {
-            _fixture = new Fixture();
+            //_fixture = new Fixture();
             _mockApi = new Mock<IOpenExchangeRatesApi>();
             _mockLogger = new Mock<ILogger<ExchangeRateService>>();
             _mockConfiguration = new Mock<IConfiguration>();
