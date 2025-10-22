@@ -30,12 +30,12 @@ namespace Money.Application.ExternalServices
                 {
                     response = await _api.GetLatestRateAsync(_apiKey, fromCurrency, toCurrency);
                 }
-                catch
+                catch 
                 {
-                    // External API error
+                     throw new ArgumentException($"External API error {fromCurrency} to {toCurrency}");
                 }
 
-                if (response == null || response.Rates.First().Value == 0)
+                if (response == null || response.Rates == null || response.Rates.Count == 0)
                 {
                     return 0;
                 }
