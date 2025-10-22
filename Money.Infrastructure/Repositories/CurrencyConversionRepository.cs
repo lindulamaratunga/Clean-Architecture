@@ -36,7 +36,7 @@ namespace Money.Infrastructure.Repositories
         public async Task<IEnumerable<CurrencyConversion>> GetByCurrencyCodeAsync(string code)
         {
             return await _context.CurrencyConversions
-                .Where(c => c.FromCurrency == code)
+                .Where(c => c.ToCurrency == code)
                 .OrderByDescending(c => c.ConversionDate)
                 .ToListAsync();
         }
