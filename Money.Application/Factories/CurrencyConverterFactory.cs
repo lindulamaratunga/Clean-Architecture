@@ -31,12 +31,11 @@ namespace Money.Application.Factories
                 _logger.LogInformation("Starting currency conversion: {Amount} {FromCurrency} to {ToCurrency}",
                     amount, fromCurrency, toCurrency);
 
-                if (fromCurrency == null)
+                if (string.IsNullOrWhiteSpace(fromCurrency))
                 {
                     throw new ArgumentException($"Currency {fromCurrency} is not supported");
                 }
-
-                if (toCurrency == null)
+                if (string.IsNullOrWhiteSpace(toCurrency))
                 {
                     throw new ArgumentException($"Currency {toCurrency} is not supported");
                 }
