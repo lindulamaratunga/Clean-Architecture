@@ -28,18 +28,20 @@ builder.Services.AddDbContext<MoneyDbContext>(options => options.UseSqlite(build
 
 
 // Add AutoMapper
-builder.Services.AddAutoMapper(typeof(CurrencyMappingProfile));
+//builder.Services.AddAutoMapper((typeof(CurrencyMappingProfile));
+builder.Services.AddAutoMapper(cfg => { }, typeof(CurrencyMappingProfile));
 
 // Add application services
 builder.Services.AddApplicationServices();
 
 // Add Refit for Open Exchange Rates API
-builder.Services.AddRefitClient<IOpenExchangeRatesApi>()
+builder.Services.AddRefitGeneratedClient<IOpenExchangeRatesApi>()
     .ConfigureHttpClient(c =>
     {
         var baseUrl = builder.Configuration["OpenExchangeRates:BaseUrl"];
         c.BaseAddress = new Uri(baseUrl ?? "https://openexchangerates.org/api");
     });
+
 
 // Configure Swagger for API documentation
 builder.Services.AddEndpointsApiExplorer();
